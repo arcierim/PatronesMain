@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import { FaGoogle, FaApple, FaFacebookF } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import { login } from "./services/auth"; // 👈 importar login
+import { login } from "./services/auth.ts"; 
 
 const App: React.FC = () => {
   const [username, setUsername] = useState("");
@@ -13,7 +13,7 @@ const App: React.FC = () => {
     try {
       const result = await login(username, password);
       console.log("Respuesta del backend:", result);
-      alert(JSON.stringify(result)); // 👈 muestra la respuesta en un alert
+      alert(JSON.stringify(result));
     } catch (error) {
       console.error("Error al iniciar sesión:", error);
       alert("Error al conectar con el servidor");
@@ -33,14 +33,14 @@ const App: React.FC = () => {
             placeholder="Username/Email"
             className="login-input"
             value={username}
-            onChange={(e) => setUsername(e.target.value)} // 👈 conectar estado
+            onChange={(e) => setUsername(e.target.value)} 
           />
           <input
             type="password"
             placeholder="Password"
             className="login-input"
             value={password}
-            onChange={(e) => setPassword(e.target.value)} // 👈 conectar estado
+            onChange={(e) => setPassword(e.target.value)} 
           />
           <button type="submit" className="login-button">
             Log In
