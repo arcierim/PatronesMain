@@ -1,0 +1,51 @@
+import React from "react";
+import "./App.css";
+import { FaGoogle, FaApple, FaFacebookF } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+
+const App: React.FC = () => {
+  return (
+    <div className="login-container">
+      <div className="login-card">
+        {/* Título */}
+        <h2 className="login-title">Account Log In</h2>
+
+        {/* Formulario */}
+        <form className="login-form">
+          <input
+            type="text"
+            placeholder="Username/Email"
+            className="login-input"
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            className="login-input"
+          />
+          <button type="submit" className="login-button">
+            Log In
+          </button>
+        </form>
+
+        {/* Enlaces inferiores */}
+        <div className="login-links">
+          <a href="#">Having Problems?</a>
+          <a href="#">Register Now</a>
+        </div>
+
+        {/* Otros métodos de inicio */}
+        <div className="login-alt-section">
+          <p className="login-alt-text">More Login Methods</p>
+          <div className="login-alt-buttons">
+            <button className="alt-button"><FaGoogle /></button>
+            <button className="alt-button"><FaApple /></button>
+            <button className="alt-button"><FaFacebookF /></button>
+            <button className="alt-button"><FaXTwitter /></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default App;
