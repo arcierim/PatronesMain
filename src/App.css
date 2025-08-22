@@ -1,4 +1,3 @@
-/* HTML y body ocupan toda la ventana */
 html, body {
   height: 100%;
   margin: 0;
@@ -7,7 +6,6 @@ html, body {
   transition: background 0.3s, color 0.3s;
 }
 
-/* Flex en body para centrar login */
 body {
   display: flex;
   justify-content: center;
@@ -15,7 +13,6 @@ body {
   overflow: hidden;
 }
 
-/* Root ocupa toda la ventana y centra */
 #root {
   width: 100%;
   height: 100%;
@@ -24,9 +21,6 @@ body {
   align-items: center;
 }
 
-/* --------------------------
-   BOTÓN DARK / LIGHT MODE
-   -------------------------- */
 .mode-toggle {
   position: fixed;
   top: 20px;
@@ -47,9 +41,6 @@ body {
   transform: scale(1.1);
 }
 
-/* --------------------------
-   MODOS DARK / LIGHT
-   -------------------------- */
 body.dark-mode, html.dark-mode {
   background: linear-gradient(135deg, #1f1f1f 0%, #3c3c3c 100%);
   color: #e0e0e0;
@@ -60,7 +51,6 @@ body.light-mode, html.light-mode {
   color: #000;
 }
 
-/* Contenedor del login */
 .login-container {
   display: flex;
   justify-content: center;
@@ -68,7 +58,6 @@ body.light-mode, html.light-mode {
   width: 100%;
 }
 
-/* Tarjeta de login */
 .login-card {
   width: 100%;
   max-width: 500px;
@@ -81,20 +70,17 @@ body.light-mode, html.light-mode {
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Animación de entrada */
 @keyframes fadeInUp {
   0% { opacity: 0; transform: translateY(50px); }
   100% { opacity: 1; transform: translateY(0); }
 }
 
-/* Título */
 .login-title {
   font-size: 2.2rem;
   font-weight: bold;
   margin-bottom: 30px;
 }
 
-/* Formulario */
 .login-form {
   display: flex;
   flex-direction: column;
@@ -110,7 +96,6 @@ body.light-mode, html.light-mode {
   transition: background 0.3s, color 0.3s, border 0.3s;
 }
 
-/* Botón principal */
 .login-button {
   background-color: #6b73ff;
   color: #fff;
@@ -127,7 +112,6 @@ body.light-mode, html.light-mode {
   background-color: #4a55d3;
 }
 
-/* Enlaces */
 .login-links {
   display: flex;
   justify-content: space-between;
@@ -145,7 +129,6 @@ body.light-mode, html.light-mode {
   text-decoration: underline;
 }
 
-/* Otros métodos de login */
 .login-alt-section {
   margin-top: 25px;
 }
@@ -174,7 +157,6 @@ body.light-mode, html.light-mode {
   transform: scale(1.1);
 }
 
-/* Modos dark/light específicos para login y botones */
 body.dark-mode .login-card {
   background-color: #3a3a3a;
   color: #e0e0e0;
@@ -217,7 +199,6 @@ body.light-mode .modal-card {
   color: #000;
 }
 
-/* Responsivo */
 @media (max-width: 768px) {
   .login-card {
     max-width: 90%;
@@ -228,9 +209,6 @@ body.light-mode .modal-card {
   .alt-button { padding: 14px; font-size: 1.3rem; }
 }
 
-/* ===========================
-   ESTILOS PARA VENTANA EMERGENTE
-   =========================== */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -284,13 +262,11 @@ body.light-mode .modal-overlay {
   background-color: #4a55d3;
 }
 
-/* Animación modal */
 @keyframes fadeInScale {
   0% { opacity: 0; transform: scale(0.8); }
   100% { opacity: 1; transform: scale(1); }
 }
 
-/* Modal de registro */
 .register-form {
   display: flex;
   flex-direction: column;
@@ -323,7 +299,6 @@ body.light-mode .modal-overlay {
   background-color: #4a55d3;
 }
 
-/* Mensaje de error debajo del confirm password */
 .error-message {
   color: #ff4d4f;
   font-size: 0.9rem;
@@ -331,3 +306,41 @@ body.light-mode .modal-overlay {
   margin-bottom: 10px;
   text-align: left;
 }
+
+.register-button {
+  background: linear-gradient(135deg, #6b73ff 0%, #8b8fff 100%);
+  color: #fff;
+  padding: 16px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+}
+
+.register-button:hover {
+  background: linear-gradient(135deg, #4a55d3 0%, #6b73ff 100%);
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.register-now-button {
+  background: linear-gradient(135deg, #6b73ff 0%, #8b8fff 100%);
+  color: #fff;
+  padding: 14px 25px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+}
+
+.register-now-button:hover {
+  background: linear-gradient(135deg, #6b73ff 0%, #8b8fff 100%);
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+}
+

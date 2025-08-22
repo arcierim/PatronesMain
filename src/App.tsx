@@ -112,6 +112,7 @@ const App: React.FC = () => {
               Log In
             </button>
           </form>
+
           <div className="login-alt-section">
             <p className="login-alt-text">More Login Methods</p>
             <div className="login-alt-buttons">
@@ -130,7 +131,9 @@ const App: React.FC = () => {
             </div>
           </div>
 
-          <button onClick={() => setShowRegister(true)}>Register Now</button>
+          <button className="register-now-button" onClick={() => setShowRegister(true)}>
+            Register Now
+          </button>
         </div>
       ) : (
         <div className="login-card">
@@ -163,7 +166,7 @@ const App: React.FC = () => {
               }
               className="login-input"
             />
-            <button type="submit" className="login-button">
+            <button type="submit" className="register-button">
               Register
             </button>
           </form>
