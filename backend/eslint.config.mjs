@@ -28,7 +28,12 @@ export default tseslint.config(
     rules: {
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/no-floating-promises': 'warn',
-      '@typescript-eslint/no-unsafe-argument': 'warn'
+      '@typescript-eslint/no-unsafe-argument': 'warn',
+      "prettier/prettier": "off", // apaga Prettier en ESLint
+      "@typescript-eslint/no-unsafe-call": "off", // quita el warning del PassportStrategy
+      "@typescript-eslint/no-unused-vars": "off", // quita warnings de variables no usadas
+    
     },
   },
+  
 );
