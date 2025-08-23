@@ -1,4 +1,3 @@
-// backend/src/auth/auth.service.ts
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../prisma.service';
 import * as bcrypt from 'bcrypt';
@@ -10,7 +9,16 @@ interface RegisterDto {
 
 @Injectable()
 export class AuthService {
-  constructor(private prisma: PrismaService) {}
+  private static instance: AuthService;   //  única instancia
+  private constructor(private prisma: PrismaService) {} //  constructor privado
+
+  //  Método Singleton
+  static getInstance(prisma: PrismaService): AuthService {
+    if (!AuthService.instance) {
+      AuthService.instance = new AuthService(prisma);
+    }
+    return AuthService.instance;
+  }
 
   async registerUser(data: RegisterDto) {
     const hashedPassword = await bcrypt.hash(data.password, 10);
@@ -21,10 +29,3 @@ export class AuthService {
       },
     });
   }
-
-  async validateUser(username: string, password: string) {
-    const user = await this.prisma.user.findFirst({ where: { username } });
-    if (!user) return false;
-    return await bcrypt.compare(password, user.password);
-  }
-}
